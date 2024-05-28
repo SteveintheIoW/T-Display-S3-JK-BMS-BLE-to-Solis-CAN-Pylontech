@@ -2,7 +2,7 @@
 
 # [Arduino Lilygo T-Display S3 JK-BMS Wireless BLE To Pylontech CAN interface]()
 
-Converts the JK-BMS BLE data to Pylontech LV CAN data thus providing an interface to Hybrid Inverters such as Solis EH1 & RHI.<br/>
+Converts the JK-BMS BLE data to Pylontech LV CAN data thus providing a convenient interface to Hybrid Inverters such as Solis EH1 & RHI.<br/>
 The T-Display S3 offers an impressive colour screen to present a number of pages displaying BMS information, alarms and CAN bus Data.<br/>
 Please Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
 
@@ -22,6 +22,7 @@ Big thanks go to Scotty89 and others for their skills and generosity in sharing 
 - Display backlight is dimmed following a timeout period, the display is then disabled to reduce power and avoid Pixel burn-in.
 - A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm) .
 - Serial output supports monitoring and debugging.
+- Even if you dont require a CAN interface, perhaps this project offers a simple BMS display option with no cable or plug connections to the BMS? (set CAN_use=false)
 
 The basic interface circuit is very simple and can use just a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and RJ45 connector.
 A 5V supply to the T-Display may be derived from is USB C socket or a number of DC-DC step down regulator options. 
