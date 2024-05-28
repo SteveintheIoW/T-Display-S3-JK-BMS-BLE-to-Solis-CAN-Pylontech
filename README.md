@@ -1,20 +1,12 @@
 <div align = center>
 
-# [Arduino JK-BMS To Pylontech CAN Protocol Converter](https://github.com/ArminJo/JK-BMSToPylontechCAN)
+# [Arduino Lilygo T-Display S3 JK-BMS To Pylontech CAN interface]()
 
-Converts the JK-BMS RS485 data to Pylontech CAN data for inverters which are not compatible with JK-BMS protocol but with Pylontech protocol, like Deye inverters.<br/>
-Display of many BMS information and alarms on a locally attached serial 2004 LCD.<br/>
+Converts the JK-BMS BLE data to Pylontech LV CAN data. Enables interfacing to Inverters such as Solis EH1 & RHI.<br/>
+The T-Display S3 presents a number of screens displaying BMS information, alarms and CAN bus Data.<br/>
+Note Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
 
-[![Badge License: GPLv3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
- &nbsp; &nbsp;
-[![Badge Version](https://img.shields.io/github/v/release/ArminJo/JK-BMSToPylontechCAN?include_prereleases&color=yellow&logo=DocuSign&logoColor=white)](https://github.com/ArminJo/JK-BMSToPylontechCAN/releases/latest)
- &nbsp; &nbsp;
-[![Badge Commits since latest](https://img.shields.io/github/commits-since/ArminJo/JK-BMSToPylontechCAN/latest?color=yellow)](https://github.com/ArminJo/JK-BMSToPylontechCAN/commits/main)
- &nbsp; &nbsp;
-[![Badge Build Status](https://github.com/ArminJo/JK-BMSToPylontechCAN/workflows/TestCompile/badge.svg)](https://github.com/ArminJo/JK-BMSToPylontechCAN/actions)
- &nbsp; &nbsp;
-![Badge Hit Counter](https://visitor-badge.laobi.icu/badge?page_id=ArminJo_JK-BMSToPylontechCAN)
-<br/>
+
 
 Based on https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech.<br/>
 The JK-BMS RS485 data (e.g. at connector GPS) are provided as RS232 TTL with 115200 Bit/s.
@@ -28,30 +20,19 @@ The JK-BMS RS485 data (e.g. at connector GPS) are provided as RS232 TTL with 115
 <br/>
 
 # Features
-- Protocol converter from the JK-BMS status frame to Pylontech CAN frames.
-- Supports sending of total capayity for SMA and Luxpower inverters.
-- Optional linear **reducing maximum current above 80% SOC** (values can be adapted to your needs).
-- Display of BMS information, Cell voltages, statistics and alarms on a locally attached **serial 2004 LCD**.
-- Page button for switching **5 LCD display pages**.
-- Debug output and extra **CAN info** and **Capacity info page** on long press of button.
-- Statistics of minimum and maximum cells during balancing to **identify conspicuous cells**.
-- Switch off LCD backlight after timeout (can be disabled).
-- Beep on alarm and connection timeouts with selectable timeout.
-- Serial.print() function is still available for monitoring and debugging.
-- SOC graph output for Arduino Serial Plotter at startup and Capacity Statistics page. Clear data on long press.
-- The voltage in the SOC graph is corrected by the automatic computed ESR to get a smoother voltage curve.
+- Connects wirelessley to JK-BMS via BLE and outputs Pylontech LV CAN frames.
+- Basic adjustment of Max charge current based on SOC and Delta Cell voltage to help Balance cells and extend Cell Cycle lifetime.
+- T-Display show BMS information, SOC, Cell voltages, Alarms in colour.
+- A simple touch pad inside the enclosure is used to cycle through differnt LCD pages.
+- Display backlight is dimmed after a timeout and then display is slept to reduce power and avoid Pixel burn-in.
+- A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm) .
+- Serial output supports monitoring and debugging.
 
 **If the Aduino IDE complains about more than 100% of program storage space, burn the Uno Bootloader on your Nano, if not already done, and select the Uno as board. The Arduino Nano board definition has a [wrong "upload.maximum_size" value](https://github.com/arduino/ArduinoCore-avr/pull/546).**<br/>
 Enabling the macro `NO_SERIAL_INFO_PRINT` saves program space.
 
-**On a MCP2515 / TJA1050 kit for Arduino you must [replace the assembled 8 MHz crystal with a 16 MHz one](https://www.mittns.de/thread/1340-mcp2515-8mhz-auf-16mhz-upgrade/).**
-
-**The MCP2515 / TJA1050 kit for Arduino may be supplied by an extra 5 V regulator. My Arduino-Nano internal regulator cannot provide more than 100 mA and got defect on my site after a few days.**
-
-**By default, the program sends a request to force charge the battery if SOC is below 5 %. This can be adapted by changing the line `#define SOC_THRESHOLD_FOR_FORCE_CHARGE_REQUEST_I 5`.**
-
-At around 100% SOC, the JK-BMS seems to send strange current information of more than +/- 1 ampere.<br/>
-If CAN communications breaks, the inverter may use different values for controlling the battery (e.g. "Use Batt V"), which may lead to additional discharging / charging.
+The basic circuit is very simple and can use just a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and RJ45 connector.
+A 5V supply to the T-Display may be derived from is USB C socket or a number of DC-DC step down regulator options. 
 
 <br/>
 
