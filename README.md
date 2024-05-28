@@ -4,34 +4,27 @@
 
 Converts the JK-BMS BLE data to Pylontech LV CAN data. Enables interfacing to Inverters such as Solis EH1 & RHI.<br/>
 The T-Display S3 presents a number of screens displaying BMS information, alarms and CAN bus Data.<br/>
-Note Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
+# Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
 
 
 
-Based on https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech.<br/>
-The JK-BMS RS485 data (e.g. at connector GPS) are provided as RS232 TTL with 115200 Bit/s.
+Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech](https://www.akkudoktor.net/forum/open-source-software-projekte/jkbms-auslesen-ueber-ble-bluetooth-oder-rs485-adapter-mittels-eps-iobroker/paged/49/).<br/>
+
+Big thanks go to Scotty89 and others for their skills and generosity in sharing their work.
 
 </div>
 
-#### If you find this program useful, please give it a star.
 
-&#x1F30E; [Google Translate](https://translate.google.com/translate?sl=en&u=https://github.com/ArminJo/JK-BMSToPylontechCAN)
-
-<br/>
-
-# Features
-- Connects wirelessley to JK-BMS via BLE and outputs Pylontech LV CAN frames.
-- Basic adjustment of Max charge current based on SOC and Delta Cell voltage to help Balance cells and extend Cell Cycle lifetime.
-- T-Display show BMS information, SOC, Cell voltages, Alarms in colour.
-- A simple touch pad inside the enclosure is used to cycle through differnt LCD pages.
-- Display backlight is dimmed after a timeout and then display is slept to reduce power and avoid Pixel burn-in.
+# Key Features
+- Connects wirelessly and reliably to the JK-BMS via BLE and outputs Pylontech LV CAN frames.
+- Basic adjustment of Max charge current based on SOC and Delta Cell voltage improves cell balancing and extends Cell Cycle lifetime.
+- T-Display provides a number of pages showing BMS information, SOC, Cell voltages, Temperatures, Alarms etc in colour.
+- A simple touch pad inside the enclosure is used to cycle through different LCD pages.
+- Display backlight is dimmed after a timeout and then display is then slept to reduce power and avoid Pixel burn-in.
 - A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm) .
 - Serial output supports monitoring and debugging.
 
-**If the Aduino IDE complains about more than 100% of program storage space, burn the Uno Bootloader on your Nano, if not already done, and select the Uno as board. The Arduino Nano board definition has a [wrong "upload.maximum_size" value](https://github.com/arduino/ArduinoCore-avr/pull/546).**<br/>
-Enabling the macro `NO_SERIAL_INFO_PRINT` saves program space.
-
-The basic circuit is very simple and can use just a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and RJ45 connector.
+The basic interface circuit is very simple and can use just a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and RJ45 connector.
 A 5V supply to the T-Display may be derived from is USB C socket or a number of DC-DC step down regulator options. 
 
 <br/>
@@ -40,33 +33,10 @@ A 5V supply to the T-Display may be derived from is USB C socket or a number of 
 
 <br/>
 
-# SOC graph for a 16S LiFePO4 battery
-Created by attaching Arduio 1.8.19 Serial Plotter and then doing a long button press followed by a single one to enter the capacity info page.<br/>
-
-Here you see a steep capacity increasing at the transition from 100 % to 99 %.
-This happens when the specified capacity in the BMS is smaller than the real one.
-The new 99 % represents a bigger capacity than the old 100 %.<br/>
-If the capacity is around 100 Ah, the gradient of the capacity and the SOC line is identical.
-
-Here the current is not negative for 99%, because it is the average of the current above 100% -increasing the capacity- and the negative current delivered for the step from 100% to 99%.
-
-The voltage line is smooth, because it is corrected with the ESR (Equivalent Series Resistance) of the battery.
-![SOC graph](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/extras/SOCDataESR.png)
-
-The same (raw) data without ESR correction of voltage.
-![SOC graph](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/extras/SOCDataNoESR.png)
-
-
 # Screenshots
  The screenshots are taken from the [Wokwi example](https://wokwi.com/projects/371657348012321793) with `STANDALONE_TEST` enabled and therefore may contain random data.
 
-| Big Info page with:<br/>- SOC and Power<br/>- Maximum of 3 Temperatures and Ampere in/out<br/>- Difference between minimum / empty and (current battery voltage - Volt to full)<br/>- Display of  "C"harging "D"ischarging and "B"alancing active flags | Overview pagewith :<br/>- SOC, charged capacity, state of enable flags<br/>- Voltage, current and power<br/>- Voltage difference to empty, MosFet temperature, maximum sensor temperature, state of enabled functions. <br/>- If Overvoltage, C is replaced by O<br/>- If Undervoltage, D is Replaced by U |
-| :-: | :-: |
-| ![Big info page](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/BigInfoPage.png) | ![Overview page](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/OverviewPage.png) |
-| Undervoltage Alarm page<br/>Start of alarm message in first line<br/>Index and value of minimum cell and uptime in second line | Overtemperature Alarm page<br/>Alarm message is cleared by switching page |
-| ![Alarm page undervoltage](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/AlarmPage_Undervoltage.png) | ![Alarm page overtemperature](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/AlarmPage_MosFetOvertemperature.png) |
-| Cell info page with maximum and minimum indicators | Cell info page with:<br/>- (Cell voltages - 3 V)<br/>- SOC, current in A, balancing flag and difference between minimum / empty and current battery voltage in last column |
-| ![Cell info page long](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/CellInfoPage.png) | ![Cell info page short](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/CellInfoPage_shortVoltages.png) |
+
 | Maximum Cell Statistics page with total Time of Balancing | Maximum Cell Statistics page |
 | ![Max page](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/StatisticsMaxPage.png) | ![Min page](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/StatisticsMinPage.png)  |
 | CAN info page |  |
