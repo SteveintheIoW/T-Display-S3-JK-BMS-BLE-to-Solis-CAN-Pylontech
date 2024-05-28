@@ -2,10 +2,9 @@
 
 # [Arduino Lilygo T-Display S3 JK-BMS To Pylontech CAN interface]()
 
-Converts the JK-BMS BLE data to Pylontech LV CAN data. Enables interfacing to Inverters such as Solis EH1 & RHI.<br/>
-The T-Display S3 presents a number of screens displaying BMS information, alarms and CAN bus Data.<br/>
-# Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
-
+Converts the JK-BMS BLE data to Pylontech LV CAN data thus providing an interface to Hybrid Inverters such as Solis EH1 & RHI.<br/>
+The T-Display S3 offers an impressive colour screen to present a number of pages displaying BMS information, alarms and CAN bus Data.<br/>
+Please Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
 
 
 Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech](https://www.akkudoktor.net/forum/open-source-software-projekte/jkbms-auslesen-ueber-ble-bluetooth-oder-rs485-adapter-mittels-eps-iobroker/paged/49/).<br/>
@@ -16,11 +15,11 @@ Big thanks go to Scotty89 and others for their skills and generosity in sharing 
 
 
 # Key Features
-- Connects wirelessly and reliably to the JK-BMS via BLE and outputs Pylontech LV CAN frames.
-- Basic adjustment of Max charge current based on SOC and Delta Cell voltage improves cell balancing and extends Cell Cycle lifetime.
+- Connects wirelessly and reliably to the JK-BMS via BLE and then outputs Pylontech LV CAN frames.
+- Basic adjustment of Max charge current based on SOC and Delta Cell voltage is used to improve cell balancing and hopefully extend Cell Cycle lifetime.
 - T-Display provides a number of pages showing BMS information, SOC, Cell voltages, Temperatures, Alarms etc in colour.
-- A simple touch pad inside the enclosure is used to cycle through different LCD pages.
-- Display backlight is dimmed after a timeout and then display is then slept to reduce power and avoid Pixel burn-in.
+- A simple touch pad locaded inside the enclosure is used to wake the display and also cycle through different LCD pages.
+- Display backlight is dimmed following a timeout period, the display is then disabled to reduce power and avoid Pixel burn-in.
 - A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm) .
 - Serial output supports monitoring and debugging.
 
@@ -63,88 +62,9 @@ A 5V supply to the T-Display may be derived from is USB C socket or a number of 
 <br/>
 
 
-# Example on Wokwi
-Also usable as connection schematic.
-
-- [Wokwi JK-BMSToPylontechCAN example](https://wokwi.com/projects/371657348012321793).
-
- <br/>
 
 # Connection schematic
-The standard **RX** of the Arduino is used for the JK_BMS connection.<br/>
-A **schottky diode** is inserted into the RX line to allow programming the AVR with the JK-BMS still connected and switched on.
-Keep in mind that programming will fail if JK-BMS is connected and switched off.<br/>
-The standard **TX** of the Arduino is used for Serial.print() for monitoring and debugging. The short **request to JK-BMS is sent by `SoftwareSerialTX` using pin 4**.<br/>
-If you use the cable from the separate RS485 adapter of the JK-BMS and follow the labeling on the board, you have to **swap the lines for RX and TX (pin 4)** on the Uno / Nano.
 
-**Power** is taken from an **USB power supply** connected to the Nano. Current is 40 mA for a dark 2004 display and 55 mA for a bright one.<br/>
-Optionally, power can be taken from the second battery (>6.4 V), but then you may require an external 5V regulator. My built in regulator broke 2 times (with LCD connected).<br/>
-Or use the complete battery voltage for Nano supply and a buck converters for around 48 to 60 volt. But my test converter had an idle current of 6 mA (0.3 W), so I decided to stay with the USB power supply.
-
-
-On the Deye, connect cable before setting `Battery Mode` to `Lithium`, to avoid alarm. `Lithium Mode` for Pylontech CAN is `0` or `PYLON`.
-
-```
- ALTERNATIVE EXTERNAL POWER SUPPLY:
-                                          78L05    Optional Schottky diode - From Uno/Nano 5 V
-                                           ___                         to enable powering CAN
- Optional 6.4 V from Battery #2 >-o-------|___|-------o-|<|-< Uno 5V   module by Nano USB, if
-                                  |         |         |                battery is not attached
-                                  |        ---        |
- . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                                  |                   |
-  __________ Schottky diode   ____|____           ____|____             _________
- |        TX|>---|<|-- RX -->|RX Vin   |<- SPI ->|   5V    |           |         |
- |        RX|<-------- TX --<|4  Uno/  |         | MCP2515 |           |         |
- |  JK-BMS  |                |   Nano  |         |   CAN   |<-- CAN -->|  DEYE   |
- |          |<------- GND -->|         |<- GND ->|         |           |         |
- |__________|                |_________|         |_________|           |_________|
-
-
-
-# Connection diagram for JK-BMS GPS / UART-TTL socket (4 Pin, JST 1.25mm pitch)
-  ___ ________ ___
- |                |
- | O   O   O   O  |
- |GND  RX  TX VBAT|
- |________________|
-   |   |   |
-   |   |   --|<|-- RX of Uno / Nano
-   |   ----------- D4 (or other pin, if specified)
-   --------------- GND
-
-
-# Automatic brightness control for 2004 LCD
-   5V O------o------o
-             |      |
-            .-.     |
-        LDR | |     |
-            | |     |
-            '-'     |
-             |    |/
-             o----|
-                  |>
-                    |
-                    O To anode of LCD backlight
-
-Alternative circuit for VCC lower than 5 volt e.g. for supply by Li-ion battery
-
-  3.5V to 5V O------o------o Anode of LCD backlight
-             |
-            .-.
-   LDR with | |
-     high R | |     o Kathode of LCD backlight
-            '-'     |
-             |    |/
-             o----|
-                  |>
-                    |
-  GND O-------------o
-
-```
-<br/>
-
-# Example schematics and PCB layouts
 - EasyEda [schematics](https://easyeda.com/editor#id=0d1a2556b7634c8bbd22e9c0474cd401) and [PCB layout](https://easyeda.com/editor#id=623a04630b8b4449b72bd5462f59e85f) by Ngoc Dang Dinh.
 
 - EasyEda [schematics](https://easyeda.com/editor#id=809cb7e913b5453f9d324c442df66a4e) and [PCB layout](https://easyeda.com/editor#id=005061dbeb414870bc63ab052561ddf4) by rooftopsolarsa/WannaBeSolarSparky from [this](https://github.com/ArminJo/JK-BMSToPylontechCAN/discussions/27) discussion. The status LEDs are missing in the schematic and button2 is no longer required.
@@ -159,23 +79,10 @@ Alternative circuit for VCC lower than 5 volt e.g. for supply by Li-ion battery
 - [Uno](https://store.arduino.cc/products/arduino-uno-rev3#docs)
  <br/>
 
-# Principle of operation
-1. A request to deliver all informations is sent to the BMS (1.85 ms).
-2. Wait and receive the BMS status frame (wait for 0.18 to 1 ms + receive 25.5 ms).
-3. The BMS status frame is stored in a buffer and parity and other plausi checks are made.
-4. The cell data are converted and enhanced to fill the JKConvertedCellInfoStruct.
-   Other frame data are mapped to a C structure.
-   But all words and longs in this structure are filled with big endian and thus cannot be read directly but must be swapped on reading.
-5. Other frame data are converted and enhanced to fill the JKComputedDataStruct.
-6. The content of the status frame is printed. After reset, all info is printed once, then only dynamic info is printed.
-7. The required CAN data is filled in the according PylontechCANFrameInfoStruct.
-8. Dynamic data and alarms are displayed on the optional 2004 LCD if attached.
-9. CAN data is sent.
-
-<br/>
-
 # Compile with the Arduino IDE
-Download and extract the repository. In the Arduino IDE open the sketch with File -> Open... and select the JK-BMSToPylontechCAN folder.<br/>
+Download and extract the repository. In the Arduino IDE it is necessary to install the Espressif ESP32 board library via board manager. 
+It is also necessary to install and configure the TFT_eSPI library.  See various online resources for the T_Display S3 setup such as (https://youtu.be/gpyeMjM9cOU?si=xTou63YCcEhUK2XR).
+.<br/>
 All libraries, especially the modified ones, are included in this project.
 
 It is always recommended to burn the Uno bootloader on a Nano board, and trating your Nano board as an an Uno board for Arduino compiles.
