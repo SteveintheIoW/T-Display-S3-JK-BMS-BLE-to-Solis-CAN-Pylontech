@@ -1,6 +1,6 @@
 <div align = center>
 
-# [Arduino Lilygo T-Display S3 JK-BMS To Pylontech CAN interface]()
+# [Arduino Lilygo T-Display S3 JK-BMS Wireless BLE To Pylontech CAN interface]()
 
 Converts the JK-BMS BLE data to Pylontech LV CAN data thus providing an interface to Hybrid Inverters such as Solis EH1 & RHI.<br/>
 The T-Display S3 offers an impressive colour screen to present a number of pages displaying BMS information, alarms and CAN bus Data.<br/>
