@@ -14,7 +14,7 @@ Huge thanks must go to Scotty89 and others for their far superior coding skills 
 
 </div>
 
-
+<br/>
 # Key Features
 - Connects wirelessly and reliably to the JK-BMS via BLE and then outputs Pylontech LV CAN frames.
 - Basic adjustment of Max charge current based on SOC and Delta Cell voltage is used to improve cell balancing and hopefully extend Cell Cycle life.
