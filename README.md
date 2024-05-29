@@ -2,30 +2,34 @@
 
 # [Arduino Lilygo T-Display S3 JK-BMS Wireless BLE To Pylontech CAN interface]()
 
-Converts the JK-BMS BLE data to Pylontech LV CAN data thus providing a convenient interface to Hybrid Inverters such as Solis EH1 & RHI.<br/>
-The T-Display S3 offers an impressive colour screen to present a number of pages displaying BMS information, alarms and CAN bus Data.<br/>
+<div align = left>
+This project uses a Lilygo T-Display S3 to connect to a JK-BMS via BLE and then transfer the relevant data values to CAN bus using Pylontech LV protocol. The JK BMS is a widely used and highly respected BMS having a 2A balance capability, however they lack any built in CAN bus protocol compatible to modern Hybrid energy storage inverters. This project provides a convenient and reliable solution for interfacing a JKBMS to a Hybrid Inverter such as the Solis EH1 & RHI etc.<br/>
+The T-Display S3's impressive colour screen is used to present a number of pages displaying key BMS information, alarms and CAN bus Data.<br/> 
+
 Please Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.<br/>
 
 
 Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech](https://www.akkudoktor.net/forum/open-source-software-projekte/jkbms-auslesen-ueber-ble-bluetooth-oder-rs485-adapter-mittels-eps-iobroker/paged/49/).<br/>
 
-Big thanks go to Scotty89 and others for their skills and generosity in sharing their work.
+Huge thanks go to Scotty89 and others for their far superior coding skills and generosity in sharing their work.
 
 </div>
 
 
 # Key Features
 - Connects wirelessly and reliably to the JK-BMS via BLE and then outputs Pylontech LV CAN frames.
-- Basic adjustment of Max charge current based on SOC and Delta Cell voltage is used to improve cell balancing and hopefully extend Cell Cycle lifetime.
+- Basic adjustment of Max charge current based on SOC and Delta Cell voltage is used to improve cell balancing and hopefully extend Cell Cycle life.
 - T-Display provides a number of pages showing BMS information, SOC, Cell voltages, Temperatures, Alarms etc in colour.
-- A simple touch pad locaded inside the enclosure is used to wake the display and also cycle through different LCD pages.
-- Display backlight is dimmed following a timeout period, the display is then disabled to reduce power and avoid Pixel burn-in.
-- A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm) .
+- A simple touch pad locaded inside the enclosure is used to wake the display and to cycle through different LCD pages.
+- The display's backlight is dimmed following a timeout period, the display is then disabled to reduce power and avoid Pixel burn-in.
+- A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm).
+- Using an enclosure with a clear lid and the internal touch pad simplify assembly and result in a tidy design.
 - Serial output supports monitoring and debugging.
-- Even if you dont require a CAN interface, perhaps this project offers a simple BMS display option with no cable or plug connections to the BMS? (set CAN_use=false)
+- Even if you dont require a CAN interface, perhaps this project offers an attractive and simple BMS display option with no cable or plug connections to the BMS? 
+  (simply set 'CAN_use=false')
 
-The basic interface circuit is very simple and can use just a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and RJ45 connector.
-A 5V supply to the T-Display may be derived from is USB C socket or a number of DC-DC step down regulator options. 
+The basic interface circuit is very simple and can use just 3 key components:- a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and an RJ45 connector.
+The T-Display and circuitry can be powerd from 5V via it's USB C socket (but that may give you some issues in a power fail!) or the interface can be powered from the batteries using a number of different linear or DC-DC step down switching regulator options. 
 
 <br/>
 
