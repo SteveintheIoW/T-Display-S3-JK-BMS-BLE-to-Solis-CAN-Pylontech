@@ -12,9 +12,8 @@ Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-uk
 
 Huge thanks must go to Scotty89 and others for their far superior coding skills and generosity in sharing their work.<br/>
 
-</div>
 <br/>
-# Key Features
+# Features
 - Connects wirelessly and reliably to the JK-BMS via BLE and then outputs Pylontech LV CAN frames.
 - Basic adjustment of Max charge current based on SOC and Delta Cell voltage is used to improve cell balancing and hopefully extend Cell Cycle life.
 - The T-Display provides a number of pages displaying BMS information, SOC, Cell voltages, Temperatures, Alarms etc in colour.
