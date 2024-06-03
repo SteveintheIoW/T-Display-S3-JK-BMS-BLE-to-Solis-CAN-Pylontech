@@ -6,7 +6,7 @@
 A Lilygo T-Display S3 connects to a JK-BMS via BLE and then transfers the relevant data values to CAN bus using Pylontech LV protocol. JK BMS's (eg JK-B2A24S15P etc) are widely used and highly respected BMS designs having a 2A balance capability, however they lack any built in CAN bus protocol compatible to any modern Hybrid energy storage inverters. This project provides a convenient and reliable solution for interfacing a JK BMS to a Hybrid Inverter such as the Solis EH1 & RHI etc.<br/>
 The T-Display S3's impressive colour screen is used to present a number of pages displaying key BMS information, alarms and CAN bus Data.<br/> 
 
-Please Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware and Software version 10.Its likely some small tweaks are noing to be needed to work on a Version 11 BMS model.  <br/>
+Please Note:  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware / Software version 10. It is very likely some small tweaks may be required to work with a Version 11 BMS model (any feedback or code fixes are greatly welcomed!).  <br/>
 
 Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech](https://www.akkudoktor.net/forum/open-source-software-projekte/jkbms-auslesen-ueber-ble-bluetooth-oder-rs485-adapter-mittels-eps-iobroker/paged/49/).<br/>
 
