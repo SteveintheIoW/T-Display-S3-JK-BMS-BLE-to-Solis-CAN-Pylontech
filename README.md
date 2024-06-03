@@ -11,7 +11,12 @@ Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-uk
 
 Huge thanks must go to Scotty89 and others for their far superior coding skills and generosity in sharing their work.<br/>
 
+</div>
+#### If you find this program useful, please give it a star.
+&#x1F30E; [Google Translate](https://translate.google.com/translate?sl=en&u=https://github.com/ArminJo/JK-BMSToPylontechCAN)
+
 <br/>
+
 # Features
 - Connects wirelessly and reliably to the JK-BMS via BLE and then outputs Pylontech LV CAN frames.
 - Basic adjustment of Max charge current based on SOC and Delta Cell voltage is used to improve cell balancing and hopefully extend Cell Cycle life.
