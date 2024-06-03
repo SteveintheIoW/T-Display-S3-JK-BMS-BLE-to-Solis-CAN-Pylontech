@@ -2,6 +2,7 @@
 
 # [Arduino Lilygo T-Display S3 JK-BMS Wireless BLE To Pylontech CAN interface]()
 
+</div>
 A Lilygo T-Display S3 connects to a JK-BMS via BLE and then transfers the relevant data values to CAN bus using Pylontech LV protocol. JK BMS's (eg JK-B2A24S15P etc) are widely used and highly respected BMS designs having a 2A balance capability, however they lack any built in CAN bus protocol compatible to any modern Hybrid energy storage inverters. This project provides a convenient and reliable solution for interfacing a JK BMS to a Hybrid Inverter such as the Solis EH1 & RHI etc.<br/>
 The T-Display S3's impressive colour screen is used to present a number of pages displaying key BMS information, alarms and CAN bus Data.<br/> 
 
