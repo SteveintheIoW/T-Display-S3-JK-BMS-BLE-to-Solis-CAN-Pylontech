@@ -31,7 +31,7 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 
 <br/>
 
-![Overview](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/BreadboardAndOverviewPage.jpg)
+![Overview](Photos_Media/PCB in Enclosure.jpg)
 
 <br/>
 
