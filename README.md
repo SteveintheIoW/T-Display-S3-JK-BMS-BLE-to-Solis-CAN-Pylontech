@@ -40,8 +40,7 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 
 
 | Maximum Cell Statistics page with total Time of Balancing | Maximum Cell Statistics page |
-| ![Max page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Main%20Screen.jpg) | ![Min page](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/StatisticsMinPage.png)  |
-| CAN info page |  |
+| ![Max page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Main%20Screen.jpg) | ![Min page](Page.png](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/All%20Cell%20Volts%202.jpg)  |
 | 
 <br/>
 
