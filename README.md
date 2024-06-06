@@ -12,10 +12,6 @@ Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-uk
 
 Huge thanks must go to Scotty89 and others for their far superior coding skills and generosity in sharing their work.<br/>
 
-</div>
-#### If you find this program useful, please give it a star.
-&#x1F30E; [Google Translate](https://translate.google.com/translate?sl=en&u=https://github.com/ArminJo/JK-BMSToPylontechCAN)
-
 <br/>
 
 # Features
@@ -40,8 +36,7 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 <br/>
 
 # Screenshots
- The screenshots are taken from the [Wokwi example](https://wokwi.com/projects/371657348012321793) with `STANDALONE_TEST` enabled and therefore may contain random data.
-
+ A number of pages display Battery data, CAN information and BMS Status:-
 
 | Maximum Cell Statistics page with total Time of Balancing | Maximum Cell Statistics page |
 | ![Max page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Main%20Screen.jpg) | ![Min page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/All%20Cell%20Volts%202.jpg)  |
@@ -50,7 +45,7 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 
 # Pictures
 
-| My installation | Automatic brightness |
+| My installation | 
 | :-: | :-: |
 | ![My installation](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Interface%20and%20Solis%20EH1%20System2.jpg) | ![Automatic brightness](https://github.com/ArminJo/JK-BMSToPylontechCAN/blob/main/pictures/AutomaticBrightness.jpg) |
 | Breadboard detail |  |
