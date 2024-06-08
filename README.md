@@ -39,9 +39,9 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
  The simple circuitry shown on a breadboard.  A number of pages display Battery data, CAN information and BMS Status:-
 
 | Main Screen - current is shown Green for Charging, Red for Discharge|
-![Max page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Main%20Screen.jpg) |
+![Max page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Main%20Screen.jpg) 
 
-| Max Min Cell Volts  - All Min values in Blue, Max values in Red|
+| Max Min Cell Volts  - All Min values are shown in Blue, Max values shown in Red|
 ![Min page](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/All%20Cell%20Volts%202.jpg)  
  
 <br/>
