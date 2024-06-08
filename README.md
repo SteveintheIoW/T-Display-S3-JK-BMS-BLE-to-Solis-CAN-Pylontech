@@ -6,7 +6,7 @@
 A Lilygo T-Display S3 connects to a JK-BMS via BLE and then transfers the relevant data values to CAN bus using Pylontech LV protocol. JK BMS's (eg JK-B2A24S15P etc) are widely used and highly respected BMS designs having a 2A balance capability, however they lack any built in CAN bus protocol compatible to any modern Hybrid energy storage inverters. This project provides a convenient and reliable solution for interfacing a JK BMS to a Hybrid Inverter such as the Solis EH1 & RHI etc.<br/>
 The T-Display S3's impressive colour screen is used to present a number of pages displaying key BMS information, alarms and CAN bus Data.<br/> 
 
-**Please Note:**  Currently this has only been tested to work on a JK-B2A24S15P vith Hardware / Software version 10. It is very likely some small tweaks may be required to work with a Version 11 BMS model (any feedback or code fixes are greatly welcomed!).  <br/>
+**Please Note:**  Currently this has only been tested to work on a JK-B2A24S15P with Hardware / Software version 10. It is very likely some small tweaks may be required to work with a Version 11 BMS model (any feedback or code fixes are greatly welcomed!). I've also only been able to test CAN functionality on a Solis S5 EH1 but that code is reported to work OK on other inverter types.  <br/>
 
 Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech](https://www.akkudoktor.net/forum/open-source-software-projekte/jkbms-auslesen-ueber-ble-bluetooth-oder-rs485-adapter-mittels-eps-iobroker/paged/49/).<br/>
 
@@ -27,7 +27,7 @@ Huge thanks must go to Scotty89 and others for their far superior coding skills 
   (simply set 'CAN_use=false')
 
 The basic interface circuit is very simple and can use just 3 key components:- a T-Display S3, a SN65HVD230 CAN bus transceiver PCB module and an RJ45 connector.
-The T-Display and circuitry can then be powered from the 5V on it's USB C socket (although in some cases this may give you some issues maintaining USB power in a grid power outage). Alternatively the interface can be powered from the battery bank using a number of different linear or DC-DC step down switching regulator options. 
+The T-Display and circuitry can then be powered from the 5V on it's USB C socket (although in some cases this may present issues in maintaining USB power during a grid power outage). Alternatively the interface can be powered from the main battery bank using a number of different linear or DC-DC step down switching regulator options. 
 
 <br/>
 
