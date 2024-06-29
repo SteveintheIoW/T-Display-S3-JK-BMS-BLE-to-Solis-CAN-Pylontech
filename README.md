@@ -23,7 +23,7 @@ Huge thanks must go to Scotty89 and others for their far superior coding skills 
 - A PCB has been created to fit a Multicomp MC001067 IP65 Polycarbonate Enclosure with clear lid and mounting flanges (55x82x80mm).
 - Using an enclosure with a clear lid and having the internal touch pad sensing simplifys assembly and result in a tidy design.
 - A Serial output can support monitoring and debugging.
-- I sought a simple, reliable device to interface between my trusted JK BMS and new Solis Hybrid, I had no requirement or interested in ESPHome or WiFi 
+- I sought a simple, reliable device to interface between my trusted JK BMS and a new Solis Hybrid Inverter, I had no requirement or interested in ESPHome or WiFi 
   connectivity etc.  
 - Even if you dont require a CAN interface, perhaps this project offers an attractive and simple BMS display option with no cable or plug connections to the BMS? 
   (simply set 'CAN_use=false')
