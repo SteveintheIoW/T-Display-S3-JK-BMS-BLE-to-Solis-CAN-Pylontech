@@ -78,6 +78,8 @@ If you just require one or two pcbs then I may be able to supply them far quicke
 # Compile with the Arduino IDE
 Download and extract the repository. In the Arduino IDE it is necessary to install the Espressif ESP32 board library via board manager. 
 It is also necessary to install and configure the TFT_eSPI library.  See various online resources for the T_Display S3 setup such as (https://youtu.be/gpyeMjM9cOU?si=xTou63YCcEhUK2XR)
+
+You will need to edit the source code to identify the BLE address of your specific BMS, also review the number of cells and charge voltages and currents to suit your battery setup.
 .<br/>
 
 
