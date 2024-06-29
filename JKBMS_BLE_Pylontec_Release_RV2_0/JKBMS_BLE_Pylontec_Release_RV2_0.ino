@@ -17,7 +17,7 @@ TO DO .... Support & Test with JKBMS V11 Hardware!?
 */
 //DONT MAKE COMMENT BLOCKS TOO BIG - Arduino IDE can throw odd compilation errors!!
 /*
-Release R1.0
+Release R2.0
 Last updated 28-05-2024
 Written by Steve Tearle
 Before using:-
@@ -41,7 +41,7 @@ Set if you want CAN active true false
 TFT_eSPI lcd = TFT_eSPI();
 TFT_eSprite sprite = TFT_eSprite(&lcd);
 
-#define SW_Version "R1.0"
+#define SW_Version "R2.0"
 
 bool debug_flg = true;
 bool debug_flg_full_log = false;
