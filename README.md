@@ -58,10 +58,19 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 |  
 <br/>
 
-# Connection schematic
 
-- Schematic pdfs [Simplest Circuit for interfacing](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/T-Display%20S3%20%20JKBMS%20BLE%20to%20CAN%20Interface%20%20-%20relevant%20parts.pdf) and [Full Circuit Diag for PCB](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/T-Display%20S3%20%20JKBMS%20BLE%20to%20CAN%20Interface%20%20-%20Full%20PCB%20cct%20Diag.pdf) 
+# Overview Video
 
+- Video of basic operation  [Youtube](https://youtu.be/v3kCdW38NNI) 
+
+
+# Circuit Schematics & PCB
+
+- Schematic Circuit Diagram pdfs [Simplest Circuit for interfacing](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/T-Display%20S3%20%20JKBMS%20BLE%20to%20CAN%20Interface%20%20-%20relevant%20parts.pdf) and [Full Circuit Diag for PCB](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/T-Display%20S3%20%20JKBMS%20BLE%20to%20CAN%20Interface%20%20-%20Full%20PCB%20cct%20Diag.pdf) 
+
+The PCB is designed to be flexible, it has many superfluous component positions offering potential to support future I/O expansion ideas (i.e RS485 / MODBUS Comms to say the inverter or a power meter, HC-12 433MHZ transciever module - long distance data to remote devices / displays, an Open drain FET - maybe control a battery heater based on BMS temperature data?)
+
+If you just require one or two pcbs then I may be able to supply them far quicker and cheaper than ordering a batch of boards with shipping and tax etc. Drop me a mail to PVhotwater@btinternet.com
 
 # Compile with the Arduino IDE
 Download and extract the repository. In the Arduino IDE it is necessary to install the Espressif ESP32 board library via board manager. 
