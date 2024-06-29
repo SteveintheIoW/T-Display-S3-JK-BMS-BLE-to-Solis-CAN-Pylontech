@@ -63,10 +63,6 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 
 - EasyEda [schematics](https://easyeda.com/editor#id=0d1a2556b7634c8bbd22e9c0474cd401) and [PCB layout](https://easyeda.com/editor#id=623a04630b8b4449b72bd5462f59e85f) by Ngoc Dang Dinh.
 
-# Board pinout diagrams
-- [Nano](https://store.arduino.cc/products/arduino-nano#docs)
-- [Uno](https://store.arduino.cc/products/arduino-uno-rev3#docs)
- <br/>
 
 # Compile with the Arduino IDE
 Download and extract the repository. In the Arduino IDE it is necessary to install the Espressif ESP32 board library via board manager. 
@@ -74,19 +70,5 @@ It is also necessary to install and configure the TFT_eSPI library.  See various
 .<br/>
 
 
-# Compile options / macros for this software
-To customize the software to different requirements, there are some compile options / macros available.<br/>
-Modify them by enabling / disabling them, or change the values if applicable.
 
-| Name | Default value | Description |
- <br/>
 
-# BOM
-### Required
-- Breadboard.
-- Jumper wire.
-- Pin header to connect cables to breadboard.
-- Schottky diode e.g. BAT 42, BAT 43, BAT 85.
-- Arduino Nano.
-- 16 MHz crystal.
-- MCP2515 / TJA1050 kit for Arduino. !!! You must replace the assembled 8 MHz crystal with a 16 MHz one !!!
