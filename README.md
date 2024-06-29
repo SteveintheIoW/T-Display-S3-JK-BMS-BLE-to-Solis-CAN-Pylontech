@@ -33,6 +33,10 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 
 <br/>
 
+# Overview Video
+- Video of basic operation  [Youtube](https://youtu.be/v3kCdW38NNI) 
+
+
 ![Overview](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Enclosure%20and%20PCB3.png)
 
 <br/>
@@ -57,11 +61,6 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 | ![My installation](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/Interface%20and%20Solis%20EH1%20System2.jpg) 
 |  
 <br/>
-
-
-# Overview Video
-
-- Video of basic operation  [Youtube](https://youtu.be/v3kCdW38NNI) 
 
 
 # Circuit Schematics & PCB
