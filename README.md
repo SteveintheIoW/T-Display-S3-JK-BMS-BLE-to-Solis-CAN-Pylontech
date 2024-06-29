@@ -60,7 +60,7 @@ The T-Display and circuitry can then be powered from the 5V on it's USB C socket
 
 # Connection schematic
 
-- Schematic pdfs [Simplest circuit for interfacing](https://easyeda.com/editor#id=0d1a2556b7634c8bbd22e9c0474cd401) and [Complete PCB Cct Diag.](https://easyeda.com/editor#id=623a04630b8b4449b72bd5462f59e85f) 
+- Schematic pdfs [Simplest circuit for interfacing](https://github.com/SteveintheIoW/T-Display-S3-JK-BMS-BLE-to-Solis-CAN-Pylontech/blob/main/Photos_Media/T-Display%20S3%20%20JKBMS%20BLE%20to%20CAN%20Interface%20%20-%20relevant%20parts.pdf) and [Complete PCB Cct Diag.](https://easyeda.com/editor#id=623a04630b8b4449b72bd5462f59e85f) 
 
 
 # Compile with the Arduino IDE
