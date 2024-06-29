@@ -10,7 +10,7 @@ The T-Display S3's impressive colour screen is used to present a number of pages
 
 Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-ukoo/jk-bms2pylontech](https://www.akkudoktor.net/forum/open-source-software-projekte/jkbms-auslesen-ueber-ble-bluetooth-oder-rs485-adapter-mittels-eps-iobroker/paged/49/).<br/>
 
-Huge thanks must go to Scotty89 and others for their far superior coding skills and generosity in sharing their work.<br/>
+Huge thanks must go to Scotty89 and others for their far superior coding skills, hard work, and generosity in sharing their code.<br/>
 
 <br/>
 
