@@ -12,6 +12,7 @@ Based on [https://github.com/syssi/esphome-jk-bms and https://github.com/maxx-uk
 
 Huge thanks must go to Scotty89 and others for their far superior coding skills, hard work, and generosity in sharing their code.<br/>
 
+V6a WIP incldes some minor changes to address updates in newer Arduino ESP32 board manager (3.3.0) files (deprocated LEDcPWM commands and Arduino String handling in BLE code) plus changes in CAN code to better manage charging and balancing at high and Low SOC conditions.<br/>
 <br/>
 
 # Features
